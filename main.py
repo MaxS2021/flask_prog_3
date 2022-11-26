@@ -20,14 +20,14 @@ class LoginForm(FlaskForm):
 @app.route("/index")
 def index():
     user = "КИС20-03"
-    return render_template('index.html', title="Home page", username=user)
+    return render_template('index_old.html', title="Home page", username=user)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
         return redirect('/success')
-    return render_template('login.html', title='Авторизация', form=form)
+    return render_template('login_old.html', title='Авторизация', form=form)
 
 @app.route("/success")
 def success():
